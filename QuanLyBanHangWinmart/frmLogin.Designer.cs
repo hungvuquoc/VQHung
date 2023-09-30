@@ -30,96 +30,103 @@
         {
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnDangNhap = new System.Windows.Forms.Button();
-            this.mtxtPassword = new System.Windows.Forms.MaskedTextBox();
-            this.txtPassword = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.mtxtMatKhau = new System.Windows.Forms.MaskedTextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.txtTenDangNhap = new System.Windows.Forms.TextBox();
+            this.lblUsername = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.lblLoi = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(485, 285);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThoat.Location = new System.Drawing.Point(252, 170);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(100, 28);
+            this.btnThoat.Size = new System.Drawing.Size(75, 23);
             this.btnThoat.TabIndex = 13;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.Location = new System.Drawing.Point(338, 285);
-            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDangNhap.Location = new System.Drawing.Point(112, 170);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(100, 28);
+            this.btnDangNhap.Size = new System.Drawing.Size(75, 23);
             this.btnDangNhap.TabIndex = 12;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
-            // mtxtPassword
+            // mtxtMatKhau
             // 
-            this.mtxtPassword.Location = new System.Drawing.Point(299, 232);
-            this.mtxtPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.mtxtPassword.Name = "mtxtPassword";
-            this.mtxtPassword.PasswordChar = '*';
-            this.mtxtPassword.Size = new System.Drawing.Size(284, 22);
-            this.mtxtPassword.TabIndex = 11;
+            this.mtxtMatKhau.Location = new System.Drawing.Point(150, 106);
+            this.mtxtMatKhau.Name = "mtxtMatKhau";
+            this.mtxtMatKhau.PasswordChar = '*';
+            this.mtxtMatKhau.Size = new System.Drawing.Size(214, 20);
+            this.mtxtMatKhau.TabIndex = 11;
             // 
-            // txtPassword
+            // lblPassword
             // 
-            this.txtPassword.AutoSize = true;
-            this.txtPassword.Location = new System.Drawing.Point(215, 236);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(67, 16);
-            this.txtPassword.TabIndex = 10;
-            this.txtPassword.Text = "Password";
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(54, 109);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(52, 13);
+            this.lblPassword.TabIndex = 10;
+            this.lblPassword.Text = "Mật khẩu";
             // 
-            // txtEmail
+            // txtTenDangNhap
             // 
-            this.txtEmail.Location = new System.Drawing.Point(299, 179);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(284, 22);
-            this.txtEmail.TabIndex = 9;
+            this.txtTenDangNhap.Location = new System.Drawing.Point(150, 63);
+            this.txtTenDangNhap.Name = "txtTenDangNhap";
+            this.txtTenDangNhap.Size = new System.Drawing.Size(214, 20);
+            this.txtTenDangNhap.TabIndex = 9;
             // 
-            // label1
+            // lblUsername
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(215, 183);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 16);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "User name";
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Location = new System.Drawing.Point(54, 67);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(81, 13);
+            this.lblUsername.TabIndex = 8;
+            this.lblUsername.Text = "Tên đăng nhập";
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(338, 138);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Location = new System.Drawing.Point(162, 18);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblTitle.Size = new System.Drawing.Size(138, 25);
+            this.lblTitle.Size = new System.Drawing.Size(113, 20);
             this.lblTitle.TabIndex = 7;
             this.lblTitle.Text = "ĐĂNG NHẬP";
             // 
+            // lblLoi
+            // 
+            this.lblLoi.AutoSize = true;
+            this.lblLoi.ForeColor = System.Drawing.Color.Red;
+            this.lblLoi.Location = new System.Drawing.Point(147, 139);
+            this.lblLoi.Name = "lblLoi";
+            this.lblLoi.Size = new System.Drawing.Size(0, 13);
+            this.lblLoi.TabIndex = 14;
+            // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(443, 221);
+            this.Controls.Add(this.lblLoi);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangNhap);
-            this.Controls.Add(this.mtxtPassword);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.mtxtMatKhau);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.txtTenDangNhap);
+            this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.lblTitle);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmLogin";
-            this.Text = "frmLogin";
+            this.Text = "Đăng nhập";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,10 +136,11 @@
 
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnDangNhap;
-        private System.Windows.Forms.MaskedTextBox mtxtPassword;
-        private System.Windows.Forms.Label txtPassword;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox mtxtMatKhau;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.TextBox txtTenDangNhap;
+        private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblLoi;
     }
 }

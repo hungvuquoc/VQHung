@@ -8,9 +8,8 @@ namespace QuanLyBanHangWinmart
 {
     internal static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+        public static NhanVien nhanvien = new NhanVien();
+        
         [STAThread]
         static void Main()
         {
@@ -18,5 +17,23 @@ namespace QuanLyBanHangWinmart
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());
         }
+    }
+
+    class NhanVien
+    {
+        public NhanVien()
+        {
+        }
+
+        public NhanVien(string ma, string ten, string loaiTK)
+        {
+            Ma = ma;
+            Ten = ten;
+            LoaiTK = loaiTK;
+        }
+
+        public string Ma { get; set; }
+        public string Ten { get; set; }
+        public string LoaiTK { get; set; }
     }
 }

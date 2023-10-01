@@ -123,7 +123,6 @@
             this.tpChinhSua.TabIndex = 0;
             this.tpChinhSua.Text = "Chỉnh Sửa";
             this.tpChinhSua.UseVisualStyleBackColor = true;
-            this.tpChinhSua.Click += new System.EventHandler(this.tpChinhSua_Click);
             // 
             // dtpNgayVaoLam
             // 

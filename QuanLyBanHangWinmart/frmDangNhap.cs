@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace QuanLyBanHangWinmart
 {
-    public partial class frmLogin : Form
+    public partial class frmDangNhap : Form
     {
-        public frmLogin()
+        public frmDangNhap()
         {
             InitializeComponent();
         }

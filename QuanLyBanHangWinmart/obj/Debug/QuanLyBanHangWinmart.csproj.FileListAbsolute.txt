@@ -65,7 +65,6 @@ H:\CNPM\QuanLyBanHangWinmart\QuanLyBanHangWinmart\obj\Debug\QuanLyBanHangWinmart
 H:\CNPM\QuanLyBanHangWinmart\QuanLyBanHangWinmart\obj\Debug\QuanLyBanHangWinmart.frmHoaDonBan.resources
 H:\CNPM\QuanLyBanHangWinmart\QuanLyBanHangWinmart\obj\Debug\QuanLyBanHangWinmart.frmHoaDonNhap.resources
 H:\CNPM\QuanLyBanHangWinmart\QuanLyBanHangWinmart\obj\Debug\QuanLyBanHangWinmart.frmLoaiHang.resources
-H:\CNPM\QuanLyBanHangWinmart\QuanLyBanHangWinmart\obj\Debug\QuanLyBanHangWinmart.frmLogin.resources
 H:\CNPM\QuanLyBanHangWinmart\QuanLyBanHangWinmart\obj\Debug\QuanLyBanHangWinmart.frmMain.resources
 H:\CNPM\QuanLyBanHangWinmart\QuanLyBanHangWinmart\obj\Debug\QuanLyBanHangWinmart.frmNhaCungCap.resources
 H:\CNPM\QuanLyBanHangWinmart\QuanLyBanHangWinmart\obj\Debug\QuanLyBanHangWinmart.frmNhanVien.resources
@@ -75,3 +74,4 @@ H:\CNPM\QuanLyBanHangWinmart\QuanLyBanHangWinmart\obj\Debug\QuanLyBanHangWinmart
 H:\CNPM\QuanLyBanHangWinmart\QuanLyBanHangWinmart\obj\Debug\QuanLyBanHangWinmart.csproj.CopyComplete
 H:\CNPM\QuanLyBanHangWinmart\QuanLyBanHangWinmart\obj\Debug\QuanLyBanHangWinmart.exe
 H:\CNPM\QuanLyBanHangWinmart\QuanLyBanHangWinmart\obj\Debug\QuanLyBanHangWinmart.pdb
+H:\CNPM\QuanLyBanHangWinmart\QuanLyBanHangWinmart\obj\Debug\QuanLyBanHangWinmart.frmDangNhap.resources

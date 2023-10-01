@@ -16,10 +16,5 @@ namespace QuanLyBanHangWinmart
         {
             InitializeComponent();
         }
-
-        private void tpChinhSua_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

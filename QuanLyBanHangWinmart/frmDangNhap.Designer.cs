@@ -1,6 +1,6 @@
 ﻿namespace QuanLyBanHangWinmart
 {
-    partial class frmLogin
+    partial class frmDangNhap
     {
         /// <summary>
         /// Required designer variable.
@@ -111,7 +111,7 @@
             this.lblLoi.Size = new System.Drawing.Size(0, 13);
             this.lblLoi.TabIndex = 14;
             // 
-            // frmLogin
+            // frmDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -124,8 +124,9 @@
             this.Controls.Add(this.txtTenDangNhap);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.lblTitle);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "frmLogin";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "frmDangNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             this.ResumeLayout(false);
             this.PerformLayout();

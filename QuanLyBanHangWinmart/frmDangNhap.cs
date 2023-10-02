@@ -52,11 +52,7 @@ namespace QuanLyBanHangWinmart
                                 frm.ShowDialog();
                                 Close();
                             }
-                                else
-                                {
-                                    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                }
-                            }
+                        }
                     }
                 }
             }
@@ -92,12 +88,6 @@ namespace QuanLyBanHangWinmart
                 mtxtMatKhau.Focus();
                 return false;
             } 
-            else if (mtxtMatKhau.Text.Length < 6 || mtxtMatKhau.Text.Length > 50)
-            {
-                lblLoi.Text = "Mật khẩu phải từ 6 đên 50 ký tự!";
-                mtxtMatKhau.Focus();
-                return false;
-            }
 
             return true;
         }

@@ -55,3 +55,19 @@ EXEC dbo.prDangNhap @TenDangNhap='user6', -- varchar(50)
 GO
 EXEC dbo.prDangNhap @TenDangNhap='user1', -- varchar(50)
     @MatKhau='password1' -- varchar(50)
+
+
+/*=== Nhân viên ===*/
+-- Proc lấy full nhân viên
+GO
+CREATE OR ALTER PROCEDURE prGetAllNhanVien
+AS
+BEGIN
+    SELECT sMaNV, sTenNV, bGioiTinh = (CASE WHEN bGioiTinh = 0 THEN N'Nữ' ELSE 'Nam' END), 
+	       sQueQuan, dNgaySinh, dNgayVaoLam, sSDT, 
+		   bTrangThai = (CASE WHEN bTrangThai = 0 THEN N'Đã nghỉ' ELSE N'Đang làm' END)
+	FROM dbo.tblNhanVien
+END
+
+EXEC dbo.prGetAllNhanVien
+

@@ -105,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogicLayer\DangNhapBLL.cs" />
+    <Compile Include="BusinessLogicLayer\NhanVienBLL.cs" />
     <Compile Include="DataAccessLayer\NhanVienDAL.cs" />
     <Compile Include="DataAccessLayer\TaiKhoanDAL.cs" />
     <Compile Include="PresentationLayer\frmHangHoa.cs">

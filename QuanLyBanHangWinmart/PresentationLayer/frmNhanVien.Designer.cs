@@ -128,8 +128,8 @@
             // 
             this.cboTrangThai.FormattingEnabled = true;
             this.cboTrangThai.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
+            "Đang làm",
+            "Đã nghỉ"});
             this.cboTrangThai.Location = new System.Drawing.Point(658, 61);
             this.cboTrangThai.Margin = new System.Windows.Forms.Padding(2);
             this.cboTrangThai.Name = "cboTrangThai";
@@ -629,12 +629,14 @@
             this.dgvNhanVien.Location = new System.Drawing.Point(2, 2);
             this.dgvNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.dgvNhanVien.Name = "dgvNhanVien";
+            this.dgvNhanVien.ReadOnly = true;
             this.dgvNhanVien.RowHeadersVisible = false;
             this.dgvNhanVien.RowHeadersWidth = 51;
             this.dgvNhanVien.RowTemplate.Height = 24;
             this.dgvNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNhanVien.Size = new System.Drawing.Size(987, 168);
             this.dgvNhanVien.TabIndex = 0;
+            this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
             // 
             // frmNhanVien
             // 

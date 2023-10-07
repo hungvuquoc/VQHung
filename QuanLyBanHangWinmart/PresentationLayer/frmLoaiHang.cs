@@ -16,5 +16,10 @@ namespace QuanLyBanHangWinmart
         {
             InitializeComponent();
         }
+
+        private void cboMaS_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

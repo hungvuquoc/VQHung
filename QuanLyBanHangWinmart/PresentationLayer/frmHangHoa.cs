@@ -17,6 +17,9 @@ namespace QuanLyBanHangWinmart
             InitializeComponent();
         }
 
-        
+        private void btnHienTatCa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

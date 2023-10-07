@@ -16,5 +16,15 @@ namespace QuanLyBanHangWinmart
         {
             InitializeComponent();
         }
+
+        private void txtTrangThaiS_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

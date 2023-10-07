@@ -69,11 +69,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabContainer.Controls.Add(this.tpChinhSua);
             this.tabContainer.Controls.Add(this.tpTimKiem);
-            this.tabContainer.Location = new System.Drawing.Point(13, 34);
+            this.tabContainer.Location = new System.Drawing.Point(1, 13);
             this.tabContainer.Margin = new System.Windows.Forms.Padding(4);
             this.tabContainer.Name = "tabContainer";
             this.tabContainer.SelectedIndex = 0;
-            this.tabContainer.Size = new System.Drawing.Size(718, 245);
+            this.tabContainer.Size = new System.Drawing.Size(947, 245);
             this.tabContainer.TabIndex = 11;
             // 
             // tpChinhSua
@@ -90,7 +90,7 @@
             this.tpChinhSua.Margin = new System.Windows.Forms.Padding(4);
             this.tpChinhSua.Name = "tpChinhSua";
             this.tpChinhSua.Padding = new System.Windows.Forms.Padding(4);
-            this.tpChinhSua.Size = new System.Drawing.Size(710, 216);
+            this.tpChinhSua.Size = new System.Drawing.Size(939, 216);
             this.tpChinhSua.TabIndex = 0;
             this.tpChinhSua.Text = "Chỉnh sửa";
             this.tpChinhSua.UseVisualStyleBackColor = true;
@@ -183,7 +183,7 @@
             this.tpTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.tpTimKiem.Name = "tpTimKiem";
             this.tpTimKiem.Padding = new System.Windows.Forms.Padding(4);
-            this.tpTimKiem.Size = new System.Drawing.Size(724, 216);
+            this.tpTimKiem.Size = new System.Drawing.Size(939, 216);
             this.tpTimKiem.TabIndex = 1;
             this.tpTimKiem.Text = "Tìm kiếm";
             this.tpTimKiem.UseVisualStyleBackColor = true;
@@ -284,7 +284,7 @@
             // btnThem
             // 
             this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnThem.Location = new System.Drawing.Point(761, 70);
+            this.btnThem.Location = new System.Drawing.Point(21, 279);
             this.btnThem.Margin = new System.Windows.Forms.Padding(0);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(92, 32);
@@ -295,7 +295,7 @@
             // btnLuu
             // 
             this.btnLuu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnLuu.Location = new System.Drawing.Point(761, 125);
+            this.btnLuu.Location = new System.Drawing.Point(124, 279);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(0);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(92, 32);
@@ -306,7 +306,7 @@
             // btnSua
             // 
             this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSua.Location = new System.Drawing.Point(761, 176);
+            this.btnSua.Location = new System.Drawing.Point(265, 279);
             this.btnSua.Margin = new System.Windows.Forms.Padding(0);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(92, 32);
@@ -317,7 +317,7 @@
             // btnXoa
             // 
             this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnXoa.Location = new System.Drawing.Point(872, 99);
+            this.btnXoa.Location = new System.Drawing.Point(424, 279);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(0);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(92, 32);
@@ -328,7 +328,7 @@
             // btnHuy
             // 
             this.btnHuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnHuy.Location = new System.Drawing.Point(872, 155);
+            this.btnHuy.Location = new System.Drawing.Point(578, 279);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(0);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(92, 32);
@@ -342,7 +342,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpDanhSach.Controls.Add(this.dgvNCC);
-            this.grpDanhSach.Location = new System.Drawing.Point(17, 308);
+            this.grpDanhSach.Location = new System.Drawing.Point(24, 343);
             this.grpDanhSach.Margin = new System.Windows.Forms.Padding(4);
             this.grpDanhSach.Name = "grpDanhSach";
             this.grpDanhSach.Padding = new System.Windows.Forms.Padding(4);

@@ -104,78 +104,80 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmHangHoa.cs">
+    <Compile Include="BusinessLogicLayer\DangNhapBLL.cs" />
+    <Compile Include="DataAccessLayer\TaiKhoanDAL.cs" />
+    <Compile Include="PresentationLayer\frmHangHoa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHangHoa.Designer.cs">
+    <Compile Include="PresentationLayer\frmHangHoa.Designer.cs">
       <DependentUpon>frmHangHoa.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHoaDonBan.cs">
+    <Compile Include="PresentationLayer\frmHoaDonBan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHoaDonBan.Designer.cs">
+    <Compile Include="PresentationLayer\frmHoaDonBan.Designer.cs">
       <DependentUpon>frmHoaDonBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHoaDonNhap.cs">
+    <Compile Include="PresentationLayer\frmHoaDonNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHoaDonNhap.Designer.cs">
+    <Compile Include="PresentationLayer\frmHoaDonNhap.Designer.cs">
       <DependentUpon>frmHoaDonNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLoaiHang.cs">
+    <Compile Include="PresentationLayer\frmLoaiHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLoaiHang.Designer.cs">
+    <Compile Include="PresentationLayer\frmLoaiHang.Designer.cs">
       <DependentUpon>frmLoaiHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDangNhap.cs">
+    <Compile Include="PresentationLayer\frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDangNhap.Designer.cs">
+    <Compile Include="PresentationLayer\frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="PresentationLayer\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
+    <Compile Include="PresentationLayer\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNhaCungCap.cs">
+    <Compile Include="PresentationLayer\frmNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNhaCungCap.Designer.cs">
+    <Compile Include="PresentationLayer\frmNhaCungCap.Designer.cs">
       <DependentUpon>frmNhaCungCap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNhanVien.cs">
+    <Compile Include="PresentationLayer\frmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNhanVien.Designer.cs">
+    <Compile Include="PresentationLayer\frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmHangHoa.resx">
+    <EmbeddedResource Include="PresentationLayer\frmHangHoa.resx">
       <DependentUpon>frmHangHoa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHoaDonBan.resx">
+    <EmbeddedResource Include="PresentationLayer\frmHoaDonBan.resx">
       <DependentUpon>frmHoaDonBan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHoaDonNhap.resx">
+    <EmbeddedResource Include="PresentationLayer\frmHoaDonNhap.resx">
       <DependentUpon>frmHoaDonNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLoaiHang.resx">
+    <EmbeddedResource Include="PresentationLayer\frmLoaiHang.resx">
       <DependentUpon>frmLoaiHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDangNhap.resx">
+    <EmbeddedResource Include="PresentationLayer\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
+    <EmbeddedResource Include="PresentationLayer\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNhaCungCap.resx">
+    <EmbeddedResource Include="PresentationLayer\frmNhaCungCap.resx">
       <DependentUpon>frmNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNhanVien.resx">
+    <EmbeddedResource Include="PresentationLayer\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -201,5 +203,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

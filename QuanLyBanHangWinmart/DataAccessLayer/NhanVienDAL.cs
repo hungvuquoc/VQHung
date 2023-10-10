@@ -22,7 +22,7 @@ namespace QuanLyBanHangWinmart.DataAccessLayer
                     cm.CommandType = CommandType.StoredProcedure;
                     using (SqlDataAdapter sda = new SqlDataAdapter(cm))
                     {
-                        DataTable dt = new DataTable("DangNhap");
+                        DataTable dt = new DataTable("tblNhanVien");
                         sda.Fill(dt);
                         return dt;
                     }
@@ -68,6 +68,43 @@ namespace QuanLyBanHangWinmart.DataAccessLayer
                     cm.Parameters.AddWithValue("@TrangThai", bTrangThai);
                     con.Open();
                     cm.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void xoaNhanVien(string sMaNV)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cm = new SqlCommand("prXoaNhanVien", con))
+                {
+                    con.Open();
+                    cm.CommandType = CommandType.StoredProcedure;
+                    cm.Parameters.AddWithValue("@MaNV", sMaNV);
+                    cm.ExecuteNonQuery();
+                }
+            }
+        }
+        public DataTable timkiemNhanVien(string condition)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cm = new SqlCommand(
+                    $@"SELECT sMaNV, sTenNV, bGioiTinh = (CASE WHEN bGioiTinh = 0 THEN N'Nữ' ELSE 'Nam' END), 
+			            sQueQuan, dNgaySinh, dNgayVaoLam, sSDT, 
+			            bTrangThai = (CASE WHEN bTrangThai = 0 THEN N'Đã nghỉ' ELSE N'Đang làm' END)
+		            FROM dbo.tblNhanVien
+		            WHERE 1=1 {condition}"
+                    , con))
+                {
+                    con.Open();
+                    cm.CommandType = CommandType.Text;
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cm))
+                    {
+                        DataTable dt = new DataTable("tblNhanVienTimKiem");
+                        sda.Fill(dt);
+                        return dt;
+                    }
                 }
             }
         }

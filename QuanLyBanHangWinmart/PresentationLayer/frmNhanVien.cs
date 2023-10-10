@@ -38,19 +38,27 @@ namespace QuanLyBanHangWinmart
             dgvNhanVien.Columns[6].HeaderText = "SDT";
             dgvNhanVien.Columns[7].HeaderText = "Trạng thái";
 
+            dgvNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             btnLuu.Enabled = false;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
 
             txtMaNV.Enabled = false;
 
-            dgvNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtpNgaySinhStart.Value = dtpNgaySinhStart.MinDate;
+            dtpNgayVaoLamStart.Value = dtpNgayVaoLamStart.MinDate;
         }
 
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1)
+            if (e.RowIndex == -1 || !btnThem.Enabled)
                 return;
+
+            if (tabContainer.SelectedTab == tpTimKiem)
+            {
+                tabContainer.SelectedTab = tpChinhSua;
+            }
 
             txtMaNV.Text = dgvNhanVien.CurrentRow.Cells["sMaNV"].Value.ToString();
             txtTenNV.Text = dgvNhanVien.CurrentRow.Cells["sTenNV"].Value.ToString();
@@ -79,6 +87,20 @@ namespace QuanLyBanHangWinmart
             dtpNgayVaoLam.Value = DateTime.Now;
             txtSDT.Clear();
             cboTrangThai.Text = "";
+        }
+
+        private void resetValueS()
+        {
+            txtMaNVS.Clear();
+            txtTenNVS.Clear();
+            cboGioiTinhS.Text = "";
+            txtQueQuanS.Clear();
+            dtpNgaySinhStart.Value = dtpNgaySinhStart.MinDate;
+            dtpNgaySinhEnd.Value = DateTime.Now;
+            dtpNgayVaoLamStart.Value = dtpNgayVaoLamStart.MinDate;
+            dtpNgayVaoLamEnd.Value = DateTime.Now;
+            txtSDTS.Clear();
+            cboTrangThaiS.Text = "";
         }
 
         private bool validate()
@@ -219,7 +241,21 @@ namespace QuanLyBanHangWinmart
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (MessageBox.Show($"Bạn có muốn xóa nhân viên {txtMaNV.Text}", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    nhanVienBLL.xoaNhanVien(txtMaNV.Text);
 
+                    resetValue();
+
+                    dgvNhanVien.DataSource = nhanVienBLL.getALLNhanVien();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có lỗi xảy ra! {ex}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -254,7 +290,47 @@ namespace QuanLyBanHangWinmart
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            errorValidate.Clear();
 
+            txtMaNV.Enabled = false;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = false;
+
+            if (btnThem.Enabled == false && tabContainer.SelectedTab == tpChinhSua)
+            {
+                btnThem.Enabled = true;
+                btnLuu.Enabled = false;
+            }
+
+            resetValue();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string condition = "";
+
+                if (txtMaNVS.Text.Trim() != "")
+                    condition += $"AND sMaNV = '{txtMaNVS.Text}' ";
+
+                dgvNhanVien.DataSource = nhanVienBLL.timKiemNhanVien(condition);
+
+                lblSoLuong.Text = dgvNhanVien.RowCount.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có lỗi xảy ra! {ex}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnHienTatCa_Click(object sender, EventArgs e)
+        {
+            resetValueS();
+
+            dgvNhanVien.DataSource = nhanVienBLL.getALLNhanVien();
+
+            lblSoLuong.Text = dgvNhanVien.RowCount.ToString();
         }
     }
 }

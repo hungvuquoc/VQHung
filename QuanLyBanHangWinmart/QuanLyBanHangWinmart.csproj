@@ -108,6 +108,12 @@
     <Compile Include="BusinessLogicLayer\NhanVienBLL.cs" />
     <Compile Include="DataAccessLayer\NhanVienDAL.cs" />
     <Compile Include="DataAccessLayer\TaiKhoanDAL.cs" />
+    <Compile Include="PresentationLayer\frmGiaoDichBanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\frmGiaoDichBanHang.designer.cs">
+      <DependentUpon>frmGiaoDichBanHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\frmHangHoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,18 @@
     </Compile>
     <Compile Include="PresentationLayer\frmHoaDonNhap.Designer.cs">
       <DependentUpon>frmHoaDonNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\frmKhachHangThanThiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\frmKhachHangThanThiet.designer.cs">
+      <DependentUpon>frmKhachHangThanThiet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\frmLichSuBanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\frmLichSuBanHang.designer.cs">
+      <DependentUpon>frmLichSuBanHang.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\frmLoaiHang.cs">
       <SubType>Form</SubType>
@@ -156,8 +174,17 @@
     <Compile Include="PresentationLayer\frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\frmTraCuuHangHoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\frmTraCuuHangHoa.designer.cs">
+      <DependentUpon>frmTraCuuHangHoa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PresentationLayer\frmGiaoDichBanHang.resx">
+      <DependentUpon>frmGiaoDichBanHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\frmHangHoa.resx">
       <DependentUpon>frmHangHoa.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +193,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\frmHoaDonNhap.resx">
       <DependentUpon>frmHoaDonNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\frmKhachHangThanThiet.resx">
+      <DependentUpon>frmKhachHangThanThiet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\frmLichSuBanHang.resx">
+      <DependentUpon>frmLichSuBanHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\frmLoaiHang.resx">
       <DependentUpon>frmLoaiHang.cs</DependentUpon>
@@ -181,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\frmTraCuuHangHoa.resx">
+      <DependentUpon>frmTraCuuHangHoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

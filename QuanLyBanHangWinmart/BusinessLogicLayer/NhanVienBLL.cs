@@ -36,6 +36,11 @@ namespace QuanLyBanHangWinmart.BusinessLogicLayer
             nhanVienDAL.suaNhanVien(sMaNV, sTenNV, bGioiTinh, sQueQuan, dNgaySinh, dNgayVaoLam, sSDT, bTrangThai);
         }
 
+        public void xoaNhanVien(string sMaNV)
+        {
+            nhanVienDAL.xoaNhanVien(sMaNV);
+        }
+
         public string taoMaNhanVien()
         {
             try
@@ -46,6 +51,19 @@ namespace QuanLyBanHangWinmart.BusinessLogicLayer
             {
                 MessageBox.Show($"Không thể tạo mã nhân viên mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return "";
+            }
+        }
+
+        public DataTable timKiemNhanVien(string condition)
+        {
+            try
+            {
+                return nhanVienDAL.timkiemNhanVien(condition);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có lỗi xảy ra! {ex}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
             }
         }
     }

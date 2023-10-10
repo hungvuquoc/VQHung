@@ -142,3 +142,7 @@ H:\CNPM\quanlywinmart\QuanLyBanHangWinmart\obj\Debug\QuanLyBanHangWinmart.csproj
 H:\CNPM\quanlywinmart\QuanLyBanHangWinmart\obj\Debug\QuanLyBanHangWinmart.csproj.CopyComplete
 H:\CNPM\quanlywinmart\QuanLyBanHangWinmart\obj\Debug\QuanLyBanHangWinmart.exe
 H:\CNPM\quanlywinmart\QuanLyBanHangWinmart\obj\Debug\QuanLyBanHangWinmart.pdb
+H:\CNPM\quanlywinmart\QuanLyBanHangWinmart\obj\Debug\QuanLyBanHangWinmart.PresentationLayer.frmGiaoDichBanHang.resources
+H:\CNPM\quanlywinmart\QuanLyBanHangWinmart\obj\Debug\QuanLyBanHangWinmart.PresentationLayer.frmKhachHangThanThiet.resources
+H:\CNPM\quanlywinmart\QuanLyBanHangWinmart\obj\Debug\QuanLyBanHangWinmart.PresentationLayer.frmLichSuBanHang.resources
+H:\CNPM\quanlywinmart\QuanLyBanHangWinmart\obj\Debug\QuanLyBanHangWinmart.PresentationLayer.frmTraCuuHangHoa.resources

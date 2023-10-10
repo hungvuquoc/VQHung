@@ -100,6 +100,15 @@ BEGIN
 	WHERE sMaNV = @MaNV
 END
 
+-- Proc xóa nhân viên
+GO 
+CREATE OR ALTER PROCEDURE prXoaNhanVien(@MaNV VARCHAR(10))
+AS
+BEGIN
+	DELETE FROM dbo.tblNhanVien
+	WHERE sMaNV = @MaNV
+END
+
 -- Proc tạo mã nhân viên
 GO
 CREATE OR ALTER PROCEDURE prTaoMaNhanVien
@@ -110,3 +119,21 @@ BEGIN
 END
 
 EXEC dbo.prTaoMaNhanVien 
+
+-- Proc tìm kiếm nhân viên
+GO
+CREATE OR ALTER PROCEDURE prTimKiemNhanVien(@conditions NVARCHAR(255))
+AS
+BEGIN
+    DECLARE @Command NVARCHAR(MAX)
+	SET @Command = N'SELECT sMaNV, sTenNV, bGioiTinh = (CASE WHEN bGioiTinh = 0 THEN N''Nữ'' ELSE ''Nam'' END), 
+			sQueQuan, dNgaySinh, dNgayVaoLam, sSDT, 
+			bTrangThai = (CASE WHEN bTrangThai = 0 THEN N''Đã nghỉ'' ELSE N''Đang làm'' END)
+		FROM dbo.tblNhanVien
+		WHERE 1=1 ' + @conditions
+	EXEC SP_ExecuteSQL  @Command
+END
+
+EXEC dbo.prTimKiemNhanVien @conditions=N'AND sMaNV = ''NV001''' 
+
+

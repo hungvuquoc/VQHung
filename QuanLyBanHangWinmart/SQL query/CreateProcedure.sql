@@ -71,3 +71,42 @@ END
 
 EXEC dbo.prGetAllNhanVien
 
+
+-- Proc thêm nhân viên
+GO
+CREATE OR ALTER PROCEDURE prThemNhanVien(@MaNV VARCHAR(10), @TenNV NVARCHAR(70), @GioiTinh BIT, 
+	@QueQuan NVARCHAR(255), @NgaySinh DATE, @NgayVaoLam DATE, @SDT VARCHAR(15), @TrangThai BIT)
+AS
+BEGIN
+	INSERT INTO dbo.tblNhanVien(sMaNV, sTenNV, bGioiTinh, sQueQuan, dNgaySinh, dNgayVaoLam, sSDT, bTrangThai)
+	VALUES(@MaNV, @TenNV, @GioiTinh, @QueQuan, @NgaySinh, @NgayVaoLam, @SDT, @TrangThai)
+END
+
+-- Proc sửa nhân viên
+GO
+CREATE OR ALTER PROCEDURE prSuaNhanVien(@MaNV VARCHAR(10), @TenNV NVARCHAR(70), @GioiTinh BIT, 
+	@QueQuan NVARCHAR(255), @NgaySinh DATE, @NgayVaoLam DATE, @SDT VARCHAR(15), @TrangThai BIT)
+AS
+BEGIN
+	UPDATE dbo.tblNhanVien
+	SET sMaNV = @MaNV,
+		sTenNV = @TenNV,
+		bGioiTinh = @GioiTinh,
+		sQueQuan = @QueQuan,
+		dNgaySinh = @NgaySinh,
+		dNgayVaoLam = @NgayVaoLam,
+		sSDT = @SDT,
+		bTrangThai = @TrangThai
+	WHERE sMaNV = @MaNV
+END
+
+-- Proc tạo mã nhân viên
+GO
+CREATE OR ALTER PROCEDURE prTaoMaNhanVien
+AS
+BEGIN
+    SELECT TOP 1 FORMAT(CAST(SUBSTRING(sMaNV, 3, LEN(sMaNV)) AS INT) + 1, 'NV000') AS sMaNVMoi
+	FROM dbo.tblNhanVien ORDER BY sMaNV DESC
+END
+
+EXEC dbo.prTaoMaNhanVien 

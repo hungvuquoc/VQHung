@@ -2,10 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -57,6 +60,201 @@ namespace QuanLyBanHangWinmart
             dtpNgayVaoLam.Text = dgvNhanVien.CurrentRow.Cells["dNgayVaoLam"].Value.ToString();
             txtSDT.Text = dgvNhanVien.CurrentRow.Cells["sSDT"].Value.ToString();
             cboTrangThai.Text = dgvNhanVien.CurrentRow.Cells["bTrangThai"].Value.ToString();
+
+            if (btnThem.Enabled == true)
+            {
+                btnSua.Enabled = true;
+                btnXoa.Enabled = true;
+                txtMaNV.Enabled = false;
+            }
+        }
+
+        private void resetValue()
+        {
+            txtMaNV.Clear();
+            txtTenNV.Clear();
+            cboGioiTinh.Text = "";
+            txtQueQuan.Clear();
+            dtpNgaySinh.Value = DateTime.Now;
+            dtpNgayVaoLam.Value = DateTime.Now;
+            txtSDT.Clear();
+            cboTrangThai.Text = "";
+        }
+
+        private bool validate()
+        {
+            bool check = true;
+            Regex isInt = new Regex(@"^\d+$"),
+                  isFloat = new Regex(@"(\d+(.\d){0,1}\d*)+"),
+                  isPhoneNumber = new Regex(@"^(84|0[3|5|7|8|9])+([0-9]{8})\b$");
+
+            if (txtTenNV.Text.Trim() == "")
+            {
+                errorValidate.SetError(txtTenNV, "Không được để trống!");
+                check = false;
+            } 
+            else if (txtTenNV.Text.Length > 70)
+            {
+                errorValidate.SetError(txtTenNV, "Không được quá 70 kí tự!");
+                check = false;
+            }
+            else
+            {
+                errorValidate.SetError(txtTenNV, "");
+            }
+
+            if (cboGioiTinh.Text.Trim() == "")
+            {
+                errorValidate.SetError(cboGioiTinh, "Không được để trống!");
+                check = false;
+            }
+            else
+            {
+                errorValidate.SetError(cboGioiTinh, "");
+            }
+
+            if (txtQueQuan.Text.Trim() == "")
+            {
+                errorValidate.SetError(txtQueQuan, "Không được để trống!");
+                check = false;
+            }
+            else if (txtQueQuan.Text.Length > 255)
+            {
+                errorValidate.SetError(txtQueQuan, "Không được quá 255 kí tự!");
+                check = false;
+            }
+            else
+            {
+                errorValidate.SetError(txtQueQuan, "");
+            }
+
+            if (DateTime.Now < dtpNgayVaoLam.Value)
+            {
+                errorValidate.SetError(dtpNgayVaoLam, "Không được vượt quá thời gian hiện tại!");
+                check = false;
+            }
+            else if (dtpNgayVaoLam.Value.Year - dtpNgaySinh.Value.Year < 18)
+            {
+                errorValidate.SetError(dtpNgaySinh, "Khi vào làm nhân viên phải đủ 18 tuổi!");
+                errorValidate.SetError(dtpNgayVaoLam, "Khi vào làm nhân viên phải đủ 18 tuổi!");
+                check = false;
+            }
+            else
+            {
+                errorValidate.SetError(dtpNgaySinh, "");
+                errorValidate.SetError(dtpNgayVaoLam, "");
+            }
+
+            if (txtSDT.Text.Trim() == "")
+            {
+                errorValidate.SetError(txtSDT, "Không được để trống!");
+                check = false;
+            }
+            else if (!isPhoneNumber.IsMatch(txtSDT.Text))
+            {
+                errorValidate.SetError(txtSDT, "Số điện thoại không hợp lệ!");
+                check = false;
+            }
+            else
+            {
+                errorValidate.SetError(txtSDT, "");
+            }
+
+            if (cboTrangThai.Text.Trim() == "")
+            {
+                errorValidate.SetError(cboTrangThai, "Không được để trống!");
+                check = false;
+            }
+            else
+            {
+                errorValidate.SetError(cboTrangThai, "");
+            }
+
+            return check;
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            if (btnSua.Enabled == true)
+                resetValue();
+
+            btnThem.Enabled = false;
+            btnSua.Enabled = false;
+            btnLuu.Enabled = true;
+            btnXoa.Enabled = false;
+
+            txtMaNV.Text = nhanVienBLL.taoMaNhanVien();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (validate())
+                {
+                    if (MessageBox.Show($"Bạn có muốn sửa nhân viên {txtMaNV.Text}", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        nhanVienBLL.suaNhanVien(
+                            txtMaNV.Text.Trim(),
+                            txtTenNV.Text.Trim(),
+                            cboGioiTinh.Text == "Nam",
+                            txtQueQuan.Text.Trim(),
+                            dtpNgaySinh.Value.Date,
+                            dtpNgayVaoLam.Value.Date,
+                            txtSDT.Text.Trim(),
+                            cboTrangThai.Text == "Đang làm");
+
+                        resetValue();
+
+                        dgvNhanVien.DataSource = nhanVienBLL.getALLNhanVien();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có lỗi xảy ra! {ex}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (validate())
+                {
+                    nhanVienBLL.themNhanVien(
+                        txtMaNV.Text.Trim(),
+                        txtTenNV.Text.Trim(),
+                        cboGioiTinh.Text == "Nam",
+                        txtQueQuan.Text.Trim(),
+                        dtpNgaySinh.Value.Date,
+                        dtpNgayVaoLam.Value.Date,
+                        txtSDT.Text.Trim(),
+                        cboTrangThai.Text == "Đang làm");
+
+                    btnThem.Enabled = true;
+                    btnLuu.Enabled = false;
+
+                    resetValue();
+
+                    dgvNhanVien.DataSource = nhanVienBLL.getALLNhanVien();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có lỗi xảy ra! {ex}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -25,5 +25,28 @@ namespace QuanLyBanHangWinmart.BusinessLogicLayer
                 return null;
             }
         }
+
+        public void themNhanVien(string sMaNV, string sTenNV, bool bGioiTinh, string sQueQuan, DateTime dNgaySinh, DateTime dNgayVaoLam, string sSDT, bool bTrangThai)
+        {
+            nhanVienDAL.themNhanVien(sMaNV, sTenNV, bGioiTinh, sQueQuan, dNgaySinh, dNgayVaoLam, sSDT, bTrangThai);
+        }
+
+        public void suaNhanVien(string sMaNV, string sTenNV, bool bGioiTinh, string sQueQuan, DateTime dNgaySinh, DateTime dNgayVaoLam, string sSDT, bool bTrangThai)
+        {
+            nhanVienDAL.suaNhanVien(sMaNV, sTenNV, bGioiTinh, sQueQuan, dNgaySinh, dNgayVaoLam, sSDT, bTrangThai);
+        }
+
+        public string taoMaNhanVien()
+        {
+            try
+            {
+                return nhanVienDAL.taoMaNhanVien();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Không thể tạo mã nhân viên mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return "";
+            }
+        }
     }
 }

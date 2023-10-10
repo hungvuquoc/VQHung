@@ -10,7 +10,9 @@ CREATE TABLE tblNhanVien (
 	dNgayVaoLam DATE NOT NULL,
 	sSDT VARCHAR(15) NOT NULL,
 	bTrangThai BIT NOT NULL,
-    CONSTRAINT PK_tblNhanVien PRIMARY KEY(sMaNV)
+    CONSTRAINT PK_tblNhanVien PRIMARY KEY(sMaNV),
+	CONSTRAINT CHK_dNgayVaoLam CHECK (dNgayVaoLam <= GETDATE()),
+	CONSTRAINT CHK_du18Tuoi CHECK (dNgayVaoLam >= DATEADD(YEAR, 18, dNgaySinh))
 )
 
 --Tạo bảng Loại tài khoản

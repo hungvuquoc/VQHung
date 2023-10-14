@@ -60,7 +60,9 @@ namespace QuanLyBanHangWinmart
 
         private void tsmiHangHoa_Click(object sender, EventArgs e)
         {
-
+            frmHangHoa frm = new frmHangHoa();
+            frm.MdiParent = this;
+            frm.Show();
         }
 
         private void tsmiNhaCungCap_Click(object sender, EventArgs e)

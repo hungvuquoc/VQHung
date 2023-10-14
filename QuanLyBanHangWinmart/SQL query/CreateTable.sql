@@ -1,6 +1,7 @@
 ﻿USE QuanLyWinMart
 /*CREATE TABLE*/
 --Tạo bảng Nhân viên
+GO
 CREATE TABLE tblNhanVien (
     sMaNV VARCHAR(10) NOT NULL,
     sTenNV NVARCHAR(70) NOT NULL,
@@ -16,6 +17,7 @@ CREATE TABLE tblNhanVien (
 )
 
 --Tạo bảng Loại tài khoản
+GO
 CREATE TABLE tblLoaiTaiKhoan (
     sMaLoaiTK VARCHAR(10) NOT NULL,
     sTenLoaiTK NVARCHAR(100) NOT NULL,
@@ -23,6 +25,7 @@ CREATE TABLE tblLoaiTaiKhoan (
 )
 
 --Tạo bảng Tài khoản
+GO
 CREATE TABLE tblTaiKhoan (
     sMaTK VARCHAR(10) NOT NULL,
     sTenDangNhap VARCHAR(50) NOT NULL UNIQUE,
@@ -38,6 +41,7 @@ CREATE TABLE tblTaiKhoan (
 )
 
 --Tạo bảng Nhà cung cấp
+GO
 CREATE TABLE tblNhaCungCap (
     sMaNCC VARCHAR(10) NOT NULL,
     sTenNCC NVARCHAR(255) NOT NULL,
@@ -47,6 +51,7 @@ CREATE TABLE tblNhaCungCap (
 )
 
 --Tạo bảng Loại hàng
+GO
 CREATE TABLE tblLoaiHang (
     sMaLoaiHang VARCHAR(10) NOT NULL,
     sTenLoaiHang NVARCHAR(100) NOT NULL,
@@ -54,6 +59,7 @@ CREATE TABLE tblLoaiHang (
 )
 
 --Tạo bảng Hàng hóa
+GO
 CREATE TABLE tblHangHoa (
     sMaHang VARCHAR(10) NOT NULL,
     sTenHang NVARCHAR(100) NOT NULL,
@@ -62,14 +68,18 @@ CREATE TABLE tblHangHoa (
 	sDonViTinh NVARCHAR(50) NOT NULL,
 	dNSX DATE NOT NULL,
 	dHSD DATE NOT NULL,
-	sHinhAnh VARCHAR(255) NOT NULL,
 	sMaLoaiHang VARCHAR(10) NOT NULL,
+	CONSTRAINT CHK_fGia CHECK (fGia > 0),
+	CONSTRAINT CHK_fSoLuong CHECK (fSoLuong >= 0),
+	CONSTRAINT CHK_dNSX CHECK (dNSX <= GETDATE()),
+	CONSTRAINT CHK_dHSD CHECK (dHSD >= dNSX),
     CONSTRAINT PK_tblHangHoa PRIMARY KEY(sMaHang),
 	CONSTRAINT FK_HangHoa_LoaiHang FOREIGN KEY(sMaLoaiHang)
 	REFERENCES dbo.tblLoaiHang(sMaLoaiHang)
 )
 
 --Tạo bảng Hóa đơn nhập
+GO
 CREATE TABLE tblHoaDonNhap (
     sMaHDNhap VARCHAR(10) NOT NULL,
     dNgayLap DATE NOT NULL,
@@ -85,6 +95,7 @@ CREATE TABLE tblHoaDonNhap (
 )
 
 --Tạo bảng Chi tiết hóa đơn nhập
+GO
 CREATE TABLE tblChiTietHDN (
     sMaHDNhap VARCHAR(10) NOT NULL,
     sMaHang VARCHAR(10) NOT NULL,
@@ -97,6 +108,7 @@ CREATE TABLE tblChiTietHDN (
 )
 
 --Tạo bảng Hóa đơn bán
+GO
 CREATE TABLE tblHoaDonBan (
     sMaHDBan VARCHAR(10) NOT NULL,
     dNgayLap DATE NOT NULL,
@@ -109,6 +121,7 @@ CREATE TABLE tblHoaDonBan (
 )
 
 --Tạo bảng Chi tiết hóa đơn bán
+GO
 CREATE TABLE tblChiTietHDB (
     sMaHDBan VARCHAR(10) NOT NULL,
     sMaHang VARCHAR(10) NOT NULL,
@@ -120,6 +133,7 @@ CREATE TABLE tblChiTietHDB (
 )
 
 --Tạo bảng Khách hàng thân thiết
+GO
 CREATE TABLE tblKhachHangThanThiet (
     sMaKH VARCHAR(10) NOT NULL,
     sTenKH NVARCHAR(255) NOT NULL,

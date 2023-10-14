@@ -85,6 +85,7 @@ namespace QuanLyBanHangWinmart.DataAccessLayer
                 }
             }
         }
+
         public DataTable timkiemNhanVien(string condition)
         {
             using (SqlConnection con = new SqlConnection(connectionString))

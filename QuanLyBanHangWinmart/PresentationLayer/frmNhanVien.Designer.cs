@@ -134,6 +134,7 @@
             // 
             // cboTrangThai
             // 
+            this.cboTrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTrangThai.FormattingEnabled = true;
             this.cboTrangThai.Items.AddRange(new object[] {
             "Đang làm",
@@ -242,6 +243,7 @@
             // 
             // cboGioiTinh
             // 
+            this.cboGioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGioiTinh.FormattingEnabled = true;
             this.cboGioiTinh.Items.AddRange(new object[] {
             "Nam",
@@ -409,6 +411,7 @@
             // 
             // cboTrangThaiS
             // 
+            this.cboTrangThaiS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTrangThaiS.FormattingEnabled = true;
             this.cboTrangThaiS.Items.AddRange(new object[] {
             "",
@@ -459,6 +462,7 @@
             // 
             // cboGioiTinhS
             // 
+            this.cboGioiTinhS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGioiTinhS.FormattingEnabled = true;
             this.cboGioiTinhS.Items.AddRange(new object[] {
             "",
@@ -598,7 +602,7 @@
             this.btnTimKiem.Location = new System.Drawing.Point(604, 211);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(82, 29);
+            this.btnTimKiem.Size = new System.Drawing.Size(82, 33);
             this.btnTimKiem.TabIndex = 20;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
@@ -609,7 +613,7 @@
             this.btnHienTatCa.Location = new System.Drawing.Point(445, 211);
             this.btnHienTatCa.Margin = new System.Windows.Forms.Padding(2);
             this.btnHienTatCa.Name = "btnHienTatCa";
-            this.btnHienTatCa.Size = new System.Drawing.Size(82, 29);
+            this.btnHienTatCa.Size = new System.Drawing.Size(82, 33);
             this.btnHienTatCa.TabIndex = 8;
             this.btnHienTatCa.Text = "Hiện tất cả";
             this.btnHienTatCa.UseVisualStyleBackColor = true;
@@ -672,7 +676,7 @@
             this.Controls.Add(this.tabContainer);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmNhanVien";
-            this.Text = "frmNhanVien";
+            this.Text = "Quản lý nhân viên";
             this.Load += new System.EventHandler(this.frmNhanVien_Load);
             this.tabContainer.ResumeLayout(false);
             this.tpChinhSua.ResumeLayout(false);

@@ -120,20 +120,79 @@ END
 
 EXEC dbo.prTaoMaNhanVien 
 
--- Proc tìm kiếm nhân viên
+/*=== Loại Hàng ===*/
+-- Proc lấy tất cả mã loại hàng
 GO
-CREATE OR ALTER PROCEDURE prTimKiemNhanVien(@conditions NVARCHAR(255))
+CREATE PROCEDURE prLayMaLoaiHang
 AS
 BEGIN
-    DECLARE @Command NVARCHAR(MAX)
-	SET @Command = N'SELECT sMaNV, sTenNV, bGioiTinh = (CASE WHEN bGioiTinh = 0 THEN N''Nữ'' ELSE ''Nam'' END), 
-			sQueQuan, dNgaySinh, dNgayVaoLam, sSDT, 
-			bTrangThai = (CASE WHEN bTrangThai = 0 THEN N''Đã nghỉ'' ELSE N''Đang làm'' END)
-		FROM dbo.tblNhanVien
-		WHERE 1=1 ' + @conditions
-	EXEC SP_ExecuteSQL  @Command
+    SELECT sMaLoaiHang FROM dbo.tblLoaiHang
 END
 
-EXEC dbo.prTimKiemNhanVien @conditions=N'AND sMaNV = ''NV001''' 
+/*=== Hàng hóa ===*/
+-- Proc lấy tất cả hàng hóa
+GO
+CREATE OR ALTER PROCEDURE prLayTatCaHangHoa
+AS
+BEGIN
+    SELECT sMaHang, sTenHang, fGia, fSoLuong, sDonViTinh, dNSX, dHSD, sMaLoaiHang
+	FROM dbo.tblHangHoa
+END
 
+EXEC dbo.prLayTatCaHangHoa
 
+-- Proc thêm hàng hóa
+GO
+CREATE OR ALTER PROCEDURE prThemHangHoa(@MaHang VARCHAR(10), @TenHang NVARCHAR(100), 
+	@Gia FLOAT, @SoLuong FLOAT, @DonViTinh NVARCHAR(50), @NSX DATE, @HSD DATE, @MaLoaiHang VARCHAR(10))
+AS
+BEGIN
+	DECLARE @Check BIT = 1
+	IF EXISTS (SELECT sMaHang FROM dbo.tblHangHoa WHERE sMaHang = @MaHang)
+	BEGIN
+	    RAISERROR(N'Mã hàng đã tồn tại!',16,10);
+	    SET @Check = 0
+	END
+	IF NOT EXISTS (SELECT sMaLoaiHang FROM dbo.tblLoaiHang WHERE sMaLoaiHang = @MaLoaiHang)
+	BEGIN
+	    RAISERROR(N'Không tồn lại loại hàng này!',16,10);
+	    SET @Check = 0
+	END
+	IF @Check = 0
+	BEGIN
+	    RETURN
+	END
+	INSERT INTO dbo.tblHangHoa(sMaHang, sTenHang, fGia, fSoLuong, sDonViTinh, dNSX, dHSD, sMaLoaiHang)
+	VALUES(@MaHang, @TenHang, @Gia, @SoLuong, @DonViTinh, @NSX, @HSD, @MaLoaiHang)
+END
+
+-- Proc sửa hàng hóa
+GO
+CREATE OR ALTER PROCEDURE prSuaHangHoa(@MaHang VARCHAR(10), @TenHang NVARCHAR(100), 
+	@Gia FLOAT, @SoLuong FLOAT, @DonViTinh NVARCHAR(50), @NSX DATE, @HSD DATE, @MaLoaiHang VARCHAR(10))
+AS
+BEGIN
+	IF NOT EXISTS (SELECT sMaLoaiHang FROM dbo.tblLoaiHang WHERE sMaLoaiHang = @MaLoaiHang)
+	BEGIN
+	    RAISERROR(N'Không tồn lại loại hàng này!',16,10);
+	    RETURN
+	END
+	UPDATE dbo.tblHangHoa
+	SET sTenHang = @TenHang,
+		fGia = @Gia, 
+		fSoLuong = @SoLuong,
+		sDonViTinh = @DonViTinh,
+		dNSX = @NSX,
+		dHSD = @HSD,
+		sMaLoaiHang = @MaLoaiHang
+	WHERE sMaHang = @MaHang
+END
+
+-- Proc xóa hàng hóa
+GO 
+CREATE OR ALTER PROCEDURE prXoaHangHoa(@MaHang VARCHAR(10))
+AS
+BEGIN
+	DELETE FROM dbo.tblHangHoa
+	WHERE sMaHang = @MaHang
+END

@@ -46,6 +46,7 @@ namespace QuanLyBanHangWinmart
 
             txtMaNV.Enabled = false;
 
+            dtpNgayVaoLam.Value = DateTime.Today;
             dtpNgaySinhStart.Value = dtpNgaySinhStart.MinDate;
             dtpNgayVaoLamStart.Value = dtpNgayVaoLamStart.MinDate;
         }
@@ -106,9 +107,7 @@ namespace QuanLyBanHangWinmart
         private bool validate()
         {
             bool check = true;
-            Regex isInt = new Regex(@"^\d+$"),
-                  isFloat = new Regex(@"(\d+(.\d){0,1}\d*)+"),
-                  isPhoneNumber = new Regex(@"^(84|0[3|5|7|8|9])+([0-9]{8})\b$");
+            errorValidate.Clear();
 
             if (txtTenNV.Text.Trim() == "")
             {
@@ -120,19 +119,11 @@ namespace QuanLyBanHangWinmart
                 errorValidate.SetError(txtTenNV, "Không được quá 70 kí tự!");
                 check = false;
             }
-            else
-            {
-                errorValidate.SetError(txtTenNV, "");
-            }
 
             if (cboGioiTinh.Text.Trim() == "")
             {
                 errorValidate.SetError(cboGioiTinh, "Không được để trống!");
                 check = false;
-            }
-            else
-            {
-                errorValidate.SetError(cboGioiTinh, "");
             }
 
             if (txtQueQuan.Text.Trim() == "")
@@ -144,10 +135,6 @@ namespace QuanLyBanHangWinmart
             {
                 errorValidate.SetError(txtQueQuan, "Không được quá 255 kí tự!");
                 check = false;
-            }
-            else
-            {
-                errorValidate.SetError(txtQueQuan, "");
             }
 
             if (DateTime.Now < dtpNgayVaoLam.Value)
@@ -161,12 +148,8 @@ namespace QuanLyBanHangWinmart
                 errorValidate.SetError(dtpNgayVaoLam, "Khi vào làm nhân viên phải đủ 18 tuổi!");
                 check = false;
             }
-            else
-            {
-                errorValidate.SetError(dtpNgaySinh, "");
-                errorValidate.SetError(dtpNgayVaoLam, "");
-            }
 
+            Regex isPhoneNumber = new Regex(@"^(84|0[3|5|7|8|9])+([0-9]{8})\b$");
             if (txtSDT.Text.Trim() == "")
             {
                 errorValidate.SetError(txtSDT, "Không được để trống!");
@@ -177,19 +160,11 @@ namespace QuanLyBanHangWinmart
                 errorValidate.SetError(txtSDT, "Số điện thoại không hợp lệ!");
                 check = false;
             }
-            else
-            {
-                errorValidate.SetError(txtSDT, "");
-            }
 
             if (cboTrangThai.Text.Trim() == "")
             {
                 errorValidate.SetError(cboTrangThai, "Không được để trống!");
                 check = false;
-            }
-            else
-            {
-                errorValidate.SetError(cboTrangThai, "");
             }
 
             return check;
@@ -312,7 +287,19 @@ namespace QuanLyBanHangWinmart
                 string condition = "";
 
                 if (txtMaNVS.Text.Trim() != "")
-                    condition += $"AND sMaNV = '{txtMaNVS.Text}' ";
+                    condition += $"AND sMaNV = '{txtMaNVS.Text.Replace("'", "''")}' ";
+                if (txtTenNVS.Text.Trim() != "")
+                    condition += $"AND sTenNV LIKE N'%{txtTenNVS.Text.Replace("'", "''")}%' ";
+                if (cboGioiTinhS.Text.Trim() != "")
+                    condition += $"AND bGioiTinh = {(cboGioiTinhS.Text == "Nam" ? "1" : "0")} ";
+                if (txtQueQuanS.Text.Trim() != "")
+                    condition += $"AND sQueQuan LIKE N'%{txtQueQuanS.Text.Replace("'", "''")}%' ";
+                condition += $"AND dNgaySinh BETWEEN '{dtpNgaySinhStart.Value.Date.ToString("yyyy/MM/dd")}' AND '{dtpNgaySinhEnd.Value.Date.ToString("yyyy/MM/dd")}' ";
+                condition += $"AND dNgayVaoLam BETWEEN '{dtpNgayVaoLamStart.Value.Date.ToString("yyyy/MM/dd")}' AND '{dtpNgayVaoLamEnd.Value.Date.ToString("yyyy/MM/dd")}' ";
+                if (txtSDTS.Text.Trim() != "")
+                    condition += $"AND sSDT LIKE N'%{txtSDTS.Text.Replace("'", "''")}%' ";
+                if (cboTrangThaiS.Text.Trim() != "")
+                    condition += $"AND bTrangThai = {(cboTrangThaiS.Text == "Đang làm" ? "1" : "0")} ";
 
                 dgvNhanVien.DataSource = nhanVienBLL.timKiemNhanVien(condition);
 

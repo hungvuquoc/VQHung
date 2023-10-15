@@ -284,24 +284,18 @@ namespace QuanLyBanHangWinmart
         {
             try
             {
-                string condition = "";
-
-                if (txtMaNVS.Text.Trim() != "")
-                    condition += $"AND sMaNV = '{txtMaNVS.Text.Replace("'", "''")}' ";
-                if (txtTenNVS.Text.Trim() != "")
-                    condition += $"AND sTenNV LIKE N'%{txtTenNVS.Text.Replace("'", "''")}%' ";
-                if (cboGioiTinhS.Text.Trim() != "")
-                    condition += $"AND bGioiTinh = {(cboGioiTinhS.Text == "Nam" ? "1" : "0")} ";
-                if (txtQueQuanS.Text.Trim() != "")
-                    condition += $"AND sQueQuan LIKE N'%{txtQueQuanS.Text.Replace("'", "''")}%' ";
-                condition += $"AND dNgaySinh BETWEEN '{dtpNgaySinhStart.Value.Date.ToString("yyyy/MM/dd")}' AND '{dtpNgaySinhEnd.Value.Date.ToString("yyyy/MM/dd")}' ";
-                condition += $"AND dNgayVaoLam BETWEEN '{dtpNgayVaoLamStart.Value.Date.ToString("yyyy/MM/dd")}' AND '{dtpNgayVaoLamEnd.Value.Date.ToString("yyyy/MM/dd")}' ";
-                if (txtSDTS.Text.Trim() != "")
-                    condition += $"AND sSDT LIKE N'%{txtSDTS.Text.Replace("'", "''")}%' ";
-                if (cboTrangThaiS.Text.Trim() != "")
-                    condition += $"AND bTrangThai = {(cboTrangThaiS.Text == "Đang làm" ? "1" : "0")} ";
-
-                dgvNhanVien.DataSource = nhanVienBLL.timKiemNhanVien(condition);
+                dgvNhanVien.DataSource = nhanVienBLL.timKiemNhanVien(
+                    txtMaNVS.Text.Trim(),
+                    txtTenNVS.Text.Trim(),
+                    cboGioiTinhS.Text.Trim(),
+                    txtQueQuanS.Text.Trim(),
+                    dtpNgaySinhStart.Value.Date.ToString("yyyy/MM/dd"),
+                    dtpNgaySinhEnd.Value.Date.ToString("yyyy/MM/dd"),
+                    dtpNgayVaoLamStart.Value.Date.ToString("yyyy/MM/dd"),
+                    dtpNgayVaoLamEnd.Value.Date.ToString("yyyy/MM/dd"),
+                    txtSDTS.Text.Trim(),
+                    cboTrangThaiS.Text.Trim()
+                );
 
                 lblSoLuong.Text = dgvNhanVien.RowCount.ToString();
             }

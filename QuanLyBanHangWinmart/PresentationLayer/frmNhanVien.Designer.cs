@@ -79,6 +79,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.errorValidate = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.tabContainer.SuspendLayout();
             this.tpChinhSua.SuspendLayout();
             this.tpTimKiem.SuspendLayout();
@@ -360,6 +362,8 @@
             // 
             // tpTimKiem
             // 
+            this.tpTimKiem.Controls.Add(this.label10);
+            this.tpTimKiem.Controls.Add(this.label9);
             this.tpTimKiem.Controls.Add(this.dtpNgayVaoLamEnd);
             this.tpTimKiem.Controls.Add(this.dtpNgaySinhEnd);
             this.tpTimKiem.Controls.Add(this.cboTrangThaiS);
@@ -667,6 +671,24 @@
             // 
             this.errorValidate.ContainerControl = this;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(224, 116);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(11, 15);
+            this.label9.TabIndex = 84;
+            this.label9.Text = "-";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(224, 166);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(11, 15);
+            this.label10.TabIndex = 85;
+            this.label10.Text = "-";
+            // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -743,5 +765,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dtpNgaySinhEnd;
         private System.Windows.Forms.DateTimePicker dtpNgayVaoLamEnd;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
     }
 }

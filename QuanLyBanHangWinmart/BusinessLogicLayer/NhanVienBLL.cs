@@ -54,10 +54,34 @@ namespace QuanLyBanHangWinmart.BusinessLogicLayer
             }
         }
 
-        public DataTable timKiemNhanVien(string condition)
+        public DataTable timKiemNhanVien(string maNV, string tenNV, string gioiTinh, string queQuan, string ngaySinhStart, string ngaySinhEnd,
+            string ngayVaoLamStart, string ngayVaoLamEnd, string sdt, string trangThai)
         {
             try
             {
+                string condition = "";
+
+                if (maNV != "")
+                    condition += $"AND sMaNV = '{maNV.Replace("'", "''")}' ";
+                if (tenNV != "")
+                    condition += $"AND sTenNV LIKE N'%{tenNV.Replace("'", "''")}%' ";
+                if (gioiTinh != "")
+                    condition += $"AND bGioiTinh = {(gioiTinh == "Nam" ? "1" : "0")} ";
+                if (queQuan != "")
+                    condition += $"AND sQueQuan LIKE N'%{queQuan.Replace("'", "''")}%' ";
+                if (ngaySinhStart != "")
+                    condition += $"AND dNgaySinh >= '{ngaySinhStart}' ";
+                if (ngaySinhEnd != "")
+                    condition += $"AND dNgaySinh <= '{ngaySinhEnd}' ";
+                if (ngayVaoLamStart != "")
+                    condition += $"AND dNgayVaoLam >= '{ngayVaoLamStart}' ";
+                if (ngayVaoLamEnd != "")
+                    condition += $"AND dNgayVaoLam <= '{ngayVaoLamEnd}' ";
+                if (sdt != "")
+                    condition += $"AND sSDT LIKE '%{sdt.Replace("'", "''")}%' ";
+                if (trangThai != "")
+                    condition += $"AND bTrangThai = {(trangThai == "Đang làm" ? "1" : "0")} ";
+
                 return nhanVienDAL.timkiemNhanVien(condition);
             }
             catch (Exception ex)

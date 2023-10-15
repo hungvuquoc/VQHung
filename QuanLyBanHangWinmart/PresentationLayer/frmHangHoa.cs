@@ -326,7 +326,7 @@ namespace QuanLyBanHangWinmart
         {
             try
             {
-                if (MessageBox.Show($"Bạn có muốn xóa hàng hóa {txtMaHang.Text}", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show($"Bạn có muốn xóa hàng hóa {txtMaHang.Text}", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     hangHoaBLL.xoaHangHoa(txtMaHang.Text);
 

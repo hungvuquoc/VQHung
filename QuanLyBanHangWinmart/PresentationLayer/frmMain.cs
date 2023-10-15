@@ -58,6 +58,13 @@ namespace QuanLyBanHangWinmart
             frm.Show();
         }
 
+        private void tsmiLoaiHang_Click(object sender, EventArgs e)
+        {
+            frmLoaiHang frm = new frmLoaiHang();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
         private void tsmiHangHoa_Click(object sender, EventArgs e)
         {
             frmHangHoa frm = new frmHangHoa();

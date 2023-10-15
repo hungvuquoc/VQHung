@@ -218,7 +218,7 @@ namespace QuanLyBanHangWinmart
         {
             try
             {
-                if (MessageBox.Show($"Bạn có muốn xóa nhân viên {txtMaNV.Text}", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show($"Bạn có muốn xóa nhân viên {txtMaNV.Text}", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     nhanVienBLL.xoaNhanVien(txtMaNV.Text);
 

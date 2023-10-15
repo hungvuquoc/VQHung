@@ -26,6 +26,19 @@ namespace QuanLyBanHangWinmart.BusinessLogicLayer
             }
         }
 
+        public DataTable layHangHoaTheoLoai(string sMaLoaiHang)
+        {
+            try
+            {
+                return hangHoaDAL.layHangHoaTheoLoai(sMaLoaiHang);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có lỗi xảy ra! {ex}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
         public void themHangHoa(string sMaHang, string sTenHang, string fGia, string fSoLuong, string sDonViTinh, DateTime dNSX, DateTime dHSD, string sMaLoaiHang)
         {
             hangHoaDAL.themHangHoa(sMaHang, sTenHang, fGia, fSoLuong, sDonViTinh, dNSX, dHSD, sMaLoaiHang);

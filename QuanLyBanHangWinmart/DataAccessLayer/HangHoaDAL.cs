@@ -30,6 +30,24 @@ namespace QuanLyBanHangWinmart.DataAccessLayer
             }
         }
 
+        public DataTable layHangHoaTheoLoai(string sMaLoaiHang)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cm = new SqlCommand("prLayHangHoaTheoLoai", con))
+                {
+                    cm.CommandType = CommandType.StoredProcedure;
+                    cm.Parameters.AddWithValue("@MaLoaiHang", sMaLoaiHang);
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cm))
+                    {
+                        DataTable dt = new DataTable("tblHangHoaTheoLoai");
+                        sda.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+        }
+
         public void themHangHoa(string sMaHang, string sTenHang, string fGia, string fSoLuong, string sDonViTinh, DateTime dNSX, DateTime dHSD, string sMaLoaiHang)
         {
             using (SqlConnection con = new SqlConnection(connectionString))

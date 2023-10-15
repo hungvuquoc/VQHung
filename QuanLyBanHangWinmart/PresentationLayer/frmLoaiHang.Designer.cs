@@ -28,306 +28,234 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabContainer = new System.Windows.Forms.TabControl();
-            this.tpChinhSua = new System.Windows.Forms.TabPage();
+            this.components = new System.ComponentModel.Container();
             this.txtTenLoaiHang = new System.Windows.Forms.TextBox();
             this.lblTen = new System.Windows.Forms.Label();
             this.txtMaLoaiHang = new System.Windows.Forms.TextBox();
             this.lblMa = new System.Windows.Forms.Label();
-            this.tpTimKiem = new System.Windows.Forms.TabPage();
-            this.cboMaS = new System.Windows.Forms.ComboBox();
-            this.btnHienTatCa = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
-            this.txtTenS = new System.Windows.Forms.TextBox();
-            this.lblTenS = new System.Windows.Forms.Label();
-            this.lblMaS = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.grpDanhSach = new System.Windows.Forms.GroupBox();
-            this.dgvSP = new System.Windows.Forms.DataGridView();
-            this.tabContainer.SuspendLayout();
-            this.tpChinhSua.SuspendLayout();
-            this.tpTimKiem.SuspendLayout();
+            this.dgvLoaiHang = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvHangHoa = new System.Windows.Forms.DataGridView();
+            this.errorValidate = new System.Windows.Forms.ErrorProvider(this.components);
             this.grpDanhSach.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiHang)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorValidate)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tabContainer
-            // 
-            this.tabContainer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabContainer.Controls.Add(this.tpChinhSua);
-            this.tabContainer.Controls.Add(this.tpTimKiem);
-            this.tabContainer.Location = new System.Drawing.Point(13, 13);
-            this.tabContainer.Margin = new System.Windows.Forms.Padding(4);
-            this.tabContainer.Name = "tabContainer";
-            this.tabContainer.SelectedIndex = 0;
-            this.tabContainer.Size = new System.Drawing.Size(937, 199);
-            this.tabContainer.TabIndex = 12;
-            // 
-            // tpChinhSua
-            // 
-            this.tpChinhSua.Controls.Add(this.txtTenLoaiHang);
-            this.tpChinhSua.Controls.Add(this.lblTen);
-            this.tpChinhSua.Controls.Add(this.txtMaLoaiHang);
-            this.tpChinhSua.Controls.Add(this.lblMa);
-            this.tpChinhSua.Location = new System.Drawing.Point(4, 25);
-            this.tpChinhSua.Margin = new System.Windows.Forms.Padding(4);
-            this.tpChinhSua.Name = "tpChinhSua";
-            this.tpChinhSua.Padding = new System.Windows.Forms.Padding(4);
-            this.tpChinhSua.Size = new System.Drawing.Size(929, 170);
-            this.tpChinhSua.TabIndex = 0;
-            this.tpChinhSua.Text = "Chỉnh sửa";
-            this.tpChinhSua.UseVisualStyleBackColor = true;
             // 
             // txtTenLoaiHang
             // 
-            this.txtTenLoaiHang.Location = new System.Drawing.Point(146, 72);
+            this.txtTenLoaiHang.Location = new System.Drawing.Point(110, 61);
             this.txtTenLoaiHang.Margin = new System.Windows.Forms.Padding(0);
             this.txtTenLoaiHang.Name = "txtTenLoaiHang";
-            this.txtTenLoaiHang.Size = new System.Drawing.Size(567, 22);
+            this.txtTenLoaiHang.Size = new System.Drawing.Size(162, 20);
             this.txtTenLoaiHang.TabIndex = 13;
             // 
             // lblTen
             // 
             this.lblTen.AutoSize = true;
-            this.lblTen.Location = new System.Drawing.Point(16, 75);
-            this.lblTen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTen.Location = new System.Drawing.Point(12, 64);
             this.lblTen.Name = "lblTen";
-            this.lblTen.Size = new System.Drawing.Size(99, 16);
+            this.lblTen.Size = new System.Drawing.Size(81, 13);
             this.lblTen.TabIndex = 12;
             this.lblTen.Text = "Tên Loại Hàng ";
             // 
             // txtMaLoaiHang
             // 
-            this.txtMaLoaiHang.Location = new System.Drawing.Point(146, 24);
+            this.txtMaLoaiHang.Location = new System.Drawing.Point(110, 23);
             this.txtMaLoaiHang.Margin = new System.Windows.Forms.Padding(0);
             this.txtMaLoaiHang.Name = "txtMaLoaiHang";
-            this.txtMaLoaiHang.Size = new System.Drawing.Size(567, 22);
+            this.txtMaLoaiHang.Size = new System.Drawing.Size(162, 20);
             this.txtMaLoaiHang.TabIndex = 11;
             // 
             // lblMa
             // 
             this.lblMa.AutoSize = true;
-            this.lblMa.Location = new System.Drawing.Point(16, 27);
-            this.lblMa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMa.Location = new System.Drawing.Point(12, 26);
             this.lblMa.Name = "lblMa";
-            this.lblMa.Size = new System.Drawing.Size(91, 16);
+            this.lblMa.Size = new System.Drawing.Size(75, 13);
             this.lblMa.TabIndex = 10;
             this.lblMa.Text = "Mã Loại hàng ";
             // 
-            // tpTimKiem
-            // 
-            this.tpTimKiem.Controls.Add(this.cboMaS);
-            this.tpTimKiem.Controls.Add(this.btnHienTatCa);
-            this.tpTimKiem.Controls.Add(this.btnTimKiem);
-            this.tpTimKiem.Controls.Add(this.txtTenS);
-            this.tpTimKiem.Controls.Add(this.lblTenS);
-            this.tpTimKiem.Controls.Add(this.lblMaS);
-            this.tpTimKiem.Location = new System.Drawing.Point(4, 25);
-            this.tpTimKiem.Margin = new System.Windows.Forms.Padding(4);
-            this.tpTimKiem.Name = "tpTimKiem";
-            this.tpTimKiem.Padding = new System.Windows.Forms.Padding(4);
-            this.tpTimKiem.Size = new System.Drawing.Size(929, 170);
-            this.tpTimKiem.TabIndex = 1;
-            this.tpTimKiem.Text = "Tìm kiếm";
-            this.tpTimKiem.UseVisualStyleBackColor = true;
-            // 
-            // cboMaS
-            // 
-            this.cboMaS.FormattingEnabled = true;
-            this.cboMaS.Location = new System.Drawing.Point(134, 27);
-            this.cboMaS.Margin = new System.Windows.Forms.Padding(4);
-            this.cboMaS.Name = "cboMaS";
-            this.cboMaS.Size = new System.Drawing.Size(589, 24);
-            this.cboMaS.TabIndex = 32;
-            this.cboMaS.SelectedIndexChanged += new System.EventHandler(this.cboMaS_SelectedIndexChanged);
-            // 
-            // btnHienTatCa
-            // 
-            this.btnHienTatCa.Location = new System.Drawing.Point(597, 125);
-            this.btnHienTatCa.Margin = new System.Windows.Forms.Padding(0);
-            this.btnHienTatCa.Name = "btnHienTatCa";
-            this.btnHienTatCa.Size = new System.Drawing.Size(92, 32);
-            this.btnHienTatCa.TabIndex = 31;
-            this.btnHienTatCa.Text = "Hiện Tất Cả";
-            this.btnHienTatCa.UseVisualStyleBackColor = true;
-            // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(778, 125);
+            this.btnTimKiem.Location = new System.Drawing.Point(205, 156);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(0);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(92, 32);
+            this.btnTimKiem.Size = new System.Drawing.Size(67, 26);
             this.btnTimKiem.TabIndex = 9;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
-            // 
-            // txtTenS
-            // 
-            this.txtTenS.Location = new System.Drawing.Point(134, 72);
-            this.txtTenS.Margin = new System.Windows.Forms.Padding(0);
-            this.txtTenS.Name = "txtTenS";
-            this.txtTenS.Size = new System.Drawing.Size(589, 22);
-            this.txtTenS.TabIndex = 23;
-            // 
-            // lblTenS
-            // 
-            this.lblTenS.AutoSize = true;
-            this.lblTenS.Location = new System.Drawing.Point(16, 75);
-            this.lblTenS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTenS.Name = "lblTenS";
-            this.lblTenS.Size = new System.Drawing.Size(93, 16);
-            this.lblTenS.TabIndex = 22;
-            this.lblTenS.Text = "Tên Loại hàng";
-            // 
-            // lblMaS
-            // 
-            this.lblMaS.AutoSize = true;
-            this.lblMaS.Location = new System.Drawing.Point(16, 27);
-            this.lblMaS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMaS.Name = "lblMaS";
-            this.lblMaS.Size = new System.Drawing.Size(88, 16);
-            this.lblMaS.TabIndex = 20;
-            this.lblMaS.Text = "Mã Loại hàng";
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnThem
             // 
-            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnThem.Location = new System.Drawing.Point(17, 235);
+            this.btnThem.Location = new System.Drawing.Point(15, 105);
             this.btnThem.Margin = new System.Windows.Forms.Padding(0);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(89, 32);
+            this.btnThem.Size = new System.Drawing.Size(67, 26);
             this.btnThem.TabIndex = 14;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnLuu
             // 
-            this.btnLuu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnLuu.Location = new System.Drawing.Point(151, 235);
+            this.btnLuu.Location = new System.Drawing.Point(15, 156);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(0);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(89, 32);
+            this.btnLuu.Size = new System.Drawing.Size(67, 26);
             this.btnLuu.TabIndex = 17;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnSua
             // 
-            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSua.Location = new System.Drawing.Point(301, 235);
+            this.btnSua.Location = new System.Drawing.Point(110, 105);
             this.btnSua.Margin = new System.Windows.Forms.Padding(0);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(89, 32);
+            this.btnSua.Size = new System.Drawing.Size(67, 26);
             this.btnSua.TabIndex = 18;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnXoa.Location = new System.Drawing.Point(464, 235);
+            this.btnXoa.Location = new System.Drawing.Point(205, 105);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(0);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(89, 32);
+            this.btnXoa.Size = new System.Drawing.Size(67, 26);
             this.btnXoa.TabIndex = 19;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnHuy
             // 
-            this.btnHuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnHuy.Location = new System.Drawing.Point(651, 235);
+            this.btnHuy.Location = new System.Drawing.Point(110, 156);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(0);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(89, 32);
+            this.btnHuy.Size = new System.Drawing.Size(67, 26);
             this.btnHuy.TabIndex = 20;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // grpDanhSach
             // 
-            this.grpDanhSach.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpDanhSach.Controls.Add(this.dgvSP);
-            this.grpDanhSach.Location = new System.Drawing.Point(13, 293);
-            this.grpDanhSach.Margin = new System.Windows.Forms.Padding(4);
+            this.grpDanhSach.Controls.Add(this.dgvLoaiHang);
+            this.grpDanhSach.Location = new System.Drawing.Point(10, 206);
             this.grpDanhSach.Name = "grpDanhSach";
-            this.grpDanhSach.Padding = new System.Windows.Forms.Padding(4);
-            this.grpDanhSach.Size = new System.Drawing.Size(1052, 257);
+            this.grpDanhSach.Size = new System.Drawing.Size(283, 241);
             this.grpDanhSach.TabIndex = 21;
             this.grpDanhSach.TabStop = false;
             this.grpDanhSach.Text = "Danh sách loại hàng ";
             // 
-            // dgvSP
+            // dgvLoaiHang
             // 
-            this.dgvSP.AllowUserToAddRows = false;
-            this.dgvSP.AllowUserToDeleteRows = false;
-            this.dgvSP.AllowUserToResizeRows = false;
-            this.dgvSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSP.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvSP.Location = new System.Drawing.Point(4, 19);
-            this.dgvSP.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvSP.Name = "dgvSP";
-            this.dgvSP.RowHeadersVisible = false;
-            this.dgvSP.RowHeadersWidth = 51;
-            this.dgvSP.RowTemplate.Height = 25;
-            this.dgvSP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSP.Size = new System.Drawing.Size(1044, 234);
-            this.dgvSP.TabIndex = 0;
+            this.dgvLoaiHang.AllowUserToAddRows = false;
+            this.dgvLoaiHang.AllowUserToDeleteRows = false;
+            this.dgvLoaiHang.AllowUserToResizeRows = false;
+            this.dgvLoaiHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLoaiHang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvLoaiHang.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvLoaiHang.Location = new System.Drawing.Point(3, 16);
+            this.dgvLoaiHang.Name = "dgvLoaiHang";
+            this.dgvLoaiHang.RowHeadersVisible = false;
+            this.dgvLoaiHang.RowHeadersWidth = 51;
+            this.dgvLoaiHang.RowTemplate.Height = 25;
+            this.dgvLoaiHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvLoaiHang.Size = new System.Drawing.Size(277, 222);
+            this.dgvLoaiHang.TabIndex = 0;
+            this.dgvLoaiHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiHang_CellClick);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgvHangHoa);
+            this.groupBox1.Location = new System.Drawing.Point(311, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(704, 435);
+            this.groupBox1.TabIndex = 22;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Danh sách hàng hóa";
+            // 
+            // dgvHangHoa
+            // 
+            this.dgvHangHoa.AllowUserToAddRows = false;
+            this.dgvHangHoa.AllowUserToDeleteRows = false;
+            this.dgvHangHoa.AllowUserToResizeRows = false;
+            this.dgvHangHoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHangHoa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHangHoa.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvHangHoa.Location = new System.Drawing.Point(3, 16);
+            this.dgvHangHoa.Name = "dgvHangHoa";
+            this.dgvHangHoa.RowHeadersVisible = false;
+            this.dgvHangHoa.RowHeadersWidth = 51;
+            this.dgvHangHoa.RowTemplate.Height = 25;
+            this.dgvHangHoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHangHoa.Size = new System.Drawing.Size(698, 416);
+            this.dgvHangHoa.TabIndex = 0;
+            // 
+            // errorValidate
+            // 
+            this.errorValidate.ContainerControl = this;
             // 
             // frmLoaiHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1078, 553);
+            this.ClientSize = new System.Drawing.Size(1027, 457);
+            this.Controls.Add(this.txtTenLoaiHang);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnTimKiem);
+            this.Controls.Add(this.lblTen);
             this.Controls.Add(this.grpDanhSach);
+            this.Controls.Add(this.txtMaLoaiHang);
             this.Controls.Add(this.btnHuy);
+            this.Controls.Add(this.lblMa);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.tabContainer);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmLoaiHang";
-            this.Text = "frmLoaiHang";
-            this.tabContainer.ResumeLayout(false);
-            this.tpChinhSua.ResumeLayout(false);
-            this.tpChinhSua.PerformLayout();
-            this.tpTimKiem.ResumeLayout(false);
-            this.tpTimKiem.PerformLayout();
+            this.Text = "Quản lý loại hàng";
+            this.Load += new System.EventHandler(this.frmLoaiHang_Load);
             this.grpDanhSach.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiHang)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorValidate)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabContainer;
-        private System.Windows.Forms.TabPage tpChinhSua;
         private System.Windows.Forms.TextBox txtTenLoaiHang;
         private System.Windows.Forms.Label lblTen;
         private System.Windows.Forms.TextBox txtMaLoaiHang;
         private System.Windows.Forms.Label lblMa;
-        private System.Windows.Forms.TabPage tpTimKiem;
-        private System.Windows.Forms.ComboBox cboMaS;
-        private System.Windows.Forms.Button btnHienTatCa;
         private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.TextBox txtTenS;
-        private System.Windows.Forms.Label lblTenS;
-        private System.Windows.Forms.Label lblMaS;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.GroupBox grpDanhSach;
-        private System.Windows.Forms.DataGridView dgvSP;
+        private System.Windows.Forms.DataGridView dgvLoaiHang;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dgvHangHoa;
+        private System.Windows.Forms.ErrorProvider errorValidate;
     }
 }

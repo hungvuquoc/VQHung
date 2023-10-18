@@ -7,9 +7,9 @@ using System.Windows.Forms.VisualStyles;
 
 namespace QuanLyBanHangWinmart
 {
-    internal class DQHuy
+    internal class VQHung
     {
-        //Kiến thức thêm về git, github
+        //Kiến thức thêm về git, github , SVN
         
          
 
